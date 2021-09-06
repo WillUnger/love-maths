@@ -1,3 +1,22 @@
+//wait until the DOM is finished loading before running the game
+//get the buttons and add event listeners to them
+
+document.addEventListener("DOMContentloaded", function() {
+    let buttons = getElementsbyTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("data-type") === "submit") {
+                alert("You clicked Submit!");
+            } else {
+                let gameType = this.getAttribute("data-type");
+                alert(`You clicked $[gameType]`);
+            }
+        })
+    }
+})
+
+
 function runGame() {
 
 }
